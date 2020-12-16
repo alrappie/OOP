@@ -37,7 +37,7 @@ public class Player {
     }
 
     public static void getScoreBoard(){
-        Settings.message("-----------\nScore Board\n");
+        Settings.message("---------------\nScore Board\n");
         for (int i =0;i< scoreBoard.length;i++){
             System.out.print("[");
             if (d==(0)){
@@ -48,7 +48,7 @@ public class Player {
             System.out.print(scoreBoard[i]);
             System.out.print("]");
         }
-        Settings.message("\n-----------\n");
+        Settings.message("\n---------------\n");
         d++;
         Settings.commentator();
     }
