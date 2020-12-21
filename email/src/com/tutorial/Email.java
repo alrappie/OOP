@@ -1,7 +1,5 @@
 package com.tutorial;
 
-import java.util.Arrays;
-
 public class Email {
     private String firstName;
     private String lastName;
@@ -31,31 +29,31 @@ public class Email {
     public void setFirstName(String firstName) {
         System.out.println(">first name has been changed<");
         this.firstName = firstName;
-        getStringBuilder("------------\nYour firstname got changed\n");
+        setStringBuilder("------------\nYour firstname got changed\n");
         getInbox();
     }
     public void setLastName(String lastName) {
         System.out.println(">last name has been changed<");
         this.lastName = lastName;
-        getStringBuilder("------------\nYour lastname got changed\n");
+        setStringBuilder("------------\nYour lastname got changed\n");
         getInbox();
     }
     public void setUserName(String userName) {
         System.out.println(">username has been changed<");
         this.userName = userName;
-        getStringBuilder("------------\nYour username got changed\n");
+        setStringBuilder("------------\nYour username got changed\n");
         getInbox();
     }
     public void setGender(String gender) {
         System.out.println(">username has been changed<");
         this.gender = gender;
-        getStringBuilder("------------\nYour gender got changed!\n");
+        setStringBuilder("------------\nYour gender got changed!\n");
         getInbox();
     }
     public void setPhoneNumber(String phoneNumber) {
         System.out.println(">Phone number has been changed<");
         this.phoneNumber = phoneNumber;
-        getStringBuilder("------------\nYour phone number got changed!\n");
+        setStringBuilder("------------\nYour phone number got changed!\n");
         getInbox();
     }
     public void setLocation(String location) {
@@ -65,29 +63,29 @@ public class Email {
         getInbox();
     }
 
-    private String getPassword(){
+    private void getPassword(){
         StringBuilder stringBuilder = new StringBuilder();
         String temp = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
         for (int i =0;i<10;i++){
             stringBuilder.append(temp.charAt((int)(Math.random()*temp.length())));
         }
-        return this.password = stringBuilder.toString();
+        this.password = stringBuilder.toString();
     }
     public void setPassword() {
         System.out.println("Your current password : "+this.password);
     }
     public void changePassword(String password){
          this.password = password;
-         getStringBuilder("------------\nYour password got changed\n");
+         setStringBuilder("------------\nYour password got changed\n");
          getInbox();
     }
 
-    public StringBuilder getStringBuilder(String stringBuilder) {
-        return this.stringBuilder.append(stringBuilder);
+    public void setStringBuilder(String stringBuilder) {
+        this.stringBuilder.append(stringBuilder);
     }
 
-    public int getInbox() {
-        return inbox++;
+    public void getInbox() {
+        inbox++;
     }
 
     public void setInbox(){
@@ -108,7 +106,7 @@ public class Email {
     }
     public void composeEmail(){
         getInbox();
-        getStringBuilder("------------\nYou have sent an email!\n");
+        setStringBuilder("------------\nYou have sent an email!\n");
         System.out.println("(Email has been sent!)");
     }
 }
